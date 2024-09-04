@@ -131,4 +131,32 @@ def receive_message(encrypted_symmetric_key, encrypted_message, signature, sende
     )
 
     # Decrypt the message with the symmetric key
-    decrypted_message = decrypt_message(encrypted_symmetric_key,
+    decrypted_message = decrypt_message(encrypted_symmetric_key, encrypted_message, private_key)
+
+    # Return the decrypted message
+    return decrypted_message
+
+# Example usage
+if __name__ == "__main__":
+    # Load the recipient's public key
+    with open("recipient_public_key.pem", "rb") as key_file:
+        recipient_public_key = serialization.load_pem_public_key(
+            key_file.read(),
+            backend=default_backend()
+        )
+
+    # Load the sender's certificate
+    with open("sender_certificate.pem", "rb") as cert_file:
+        sender_certificate = load_pem_x509_certificate(
+            cert_file.read(),
+            backend=default_backend()
+        )
+
+    # Send a message
+    message = b"Hello, world!"
+    encrypted_symmetric_key, encrypted_message, signature = send_message(message, recipient_public_key)
+
+    # Receive the message
+    decrypted_message = receive_message(encrypted_symmetric_key, encrypted_message, signature, sender_certificate)
+
+    print(decrypted_message.decode())  # Output: Hello, world!
