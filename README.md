@@ -1,3 +1,5 @@
+![Static Badge](https://img.shields.io/badge/%F0%9F%93%A7-PiGram-blue)
+
 # PiGram
 The main repository for the PiGram project, featuring the decentralized, AI-powered, and secure communication ecosystem.
 
