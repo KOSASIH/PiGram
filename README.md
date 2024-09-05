@@ -31,3 +31,41 @@ PiGram has the potential to revolutionize the way we communicate online, providi
 2. Foster Community Engagement: Encourage positive behavior and community involvement through gamification and incentives.
 3. Promote Decentralization: Advance the adoption of decentralized technologies and cryptocurrencies.
 4. Enhance Security: Provide a secure and private communication ecosystem, protecting users from data breaches and cyber threats.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.9 or later
+- Telegram API token
+- Blockchain node URL
+
+## Installation
+
+1. Clone the repository: git clone https://github.com/KOSASIH/PiGram.git
+2. Install the dependencies: pip install -r requirements.txt
+3. Replace YOUR_TELEGRAM_API_TOKEN with your actual Telegram API token in utils/settings.py
+4. Replace https://node.example.com with your actual blockchain node URL in utils/settings.py
+
+## Running the Application
+
+1. Run the application: python main.py
+2. Start the chatbot: chatbot.start()
+3. Start the blockchain node: blockchain.start_node()
+
+## Modules
+
+1. blockchain
+The blockchain module provides a interface to the blockchain network, enabling the application to interact with the blockchain.
+
+2. chatbot
+The chatbot module provides a advanced chatbot that can understand and respond to user messages.
+
+3. utils
+The utils module provides utility functions for logging and settings.
+
+4. License
+PiGram is licensed under the Apache 2.0 License. See LICENSE for details.
+
+## Contributing
+Contributions are welcome! If you'd like to contribute to PiGram, please fork the repository and submit a pull request.
